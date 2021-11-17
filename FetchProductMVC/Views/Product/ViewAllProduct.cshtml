@@ -1,0 +1,45 @@
+﻿@model IEnumerable<FetchProductMVC.Models.ProductsView>
+
+@{
+    ViewBag.Title = "ViewAllProduct";
+}
+
+<h2>ViewAllProduct</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProdName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prodcolor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProdListPrice)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProdName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prodcolor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProdListPrice)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
